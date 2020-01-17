@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-ene-2020 18:53:35 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="model.Llibres" table="llibres" catalog="biblioteca" optimistic-lock="version">
+        <id name="idLlibre" type="java.lang.Integer">
+            <column name="id_llibre" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="autor" class="model.Autor" fetch="select">
+            <column name="autor" not-null="true" />
+        </many-to-one>
+        <property name="nomLlibre" type="string">
+            <column name="nom_llibre" length="50" not-null="true" />
+        </property>
+        <property name="editorial" type="string">
+            <column name="editorial" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

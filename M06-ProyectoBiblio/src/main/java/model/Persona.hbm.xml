@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-ene-2020 18:53:35 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="model.Persona" table="persona" catalog="biblioteca" optimistic-lock="version">
+        <id name="dni" type="int">
+            <column name="dni" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombrePersona" type="string">
+            <column name="nombre_persona" length="50" not-null="true" />
+        </property>
+        <property name="telefon" type="int">
+            <column name="telefon" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
